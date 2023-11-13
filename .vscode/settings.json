@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "cstdlib": "cpp",
+        "*.tcc": "cpp",
+        "bitset": "cpp",
+        "charconv": "cpp",
+        "compare": "cpp",
+        "format": "cpp",
+        "fstream": "cpp",
+        "functional": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "tuple": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp",
+        "*.rh": "cpp",
+        "stdexcept": "cpp"
+    }
+}

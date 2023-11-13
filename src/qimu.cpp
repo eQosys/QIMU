@@ -1,48 +1,28 @@
-#include <SDL.h>
-#include <iostream>
+#include "qimu.h"
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 960
+#include "VGA_Controller.h"
+#include "Keyboard_Controller.h"
 
-int main(int argc, char* argv[])
+QIMU::QIMU(std::vector<std::string> args)
 {
-    SDL_Window* window = NULL;
+    ;
+}
 
-    SDL_Surface* screenSurface = NULL;
+QIMU::~QIMU()
+{
+    ;
+}
 
-    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+int QIMU::run()
+{
+    auto vga_ctrl = VGA_Controller::get();
+
+    auto kbd_ctrl = Keyboard_Controller::get();
+
+    while (!kbd_ctrl->quit())
     {
-        std::cout << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;
-        return 1;
+        ;
     }
-
-    window = SDL_CreateWindow("QIMU", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-    if (window == NULL)
-    {
-        std::cout << "Window could not be created! SDL_Error: " << SDL_GetError() << std::endl;
-        return 1;
-    }
-
-    screenSurface = SDL_GetWindowSurface(window);
-    SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x00, 0x00, 0x00));
-    SDL_UpdateWindowSurface(window);
-
-    SDL_Event e;
-    bool quit = false;
-    while (!quit)
-    {
-        while (SDL_PollEvent(&e) != 0)
-        {
-            if (e.type == SDL_QUIT)
-            {
-                quit = true;
-            }
-        }
-    }
-
-    SDL_DestroyWindow(window);
-
-    SDL_Quit();
 
     return 0;
 }

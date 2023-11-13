@@ -13,7 +13,11 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 
 add_executable(
     qimu
+    "src/main.cpp"
     "src/qimu.cpp"
+    "src/qimu_error.cpp"
+    "src/Keyboard_Controller.cpp"
+    "src/VGA_Controller.cpp"
 )
 
 find_package(SDL2 REQUIRED)
