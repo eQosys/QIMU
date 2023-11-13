@@ -18,9 +18,11 @@ Keyboard_Controller::Keyboard_Controller()
         {
             while (SDL_PollEvent(&e) != 0)
             {
-                if (e.type == SDL_QUIT)
+                switch (e.type)
                 {
+                case SDL_QUIT:
                     m_quit = true;
+                    break;
                 }
             }
         }
