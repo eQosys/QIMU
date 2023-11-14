@@ -2,9 +2,6 @@
 
 #include <memory>
 
-constexpr int SCREEN_WIDTH = 1280;
-constexpr int SCREEN_HEIGHT = 960;
-
 class VGA_Controller
 {
 private:

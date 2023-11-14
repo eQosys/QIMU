@@ -4,6 +4,9 @@
 
 #include "qimu_error.h"
 
+constexpr int SCREEN_WIDTH = 1280;
+constexpr int SCREEN_HEIGHT = 960;
+
 VGA_Controller::VGA_Controller()
 {
     if (SDL_InitSubSystem(SDL_INIT_VIDEO) < 0)

@@ -2,9 +2,6 @@
 #include <iostream>
 #include <memory>
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 960
-
 #include "qimu.h"
 
 int main(int argc, char* argv[])
